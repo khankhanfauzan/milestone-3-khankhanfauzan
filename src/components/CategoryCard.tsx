@@ -1,4 +1,6 @@
-import { Category } from '@/types/product'
+import { Category } from "@/types/product";
+import SafeImage from "./SafeImage";
+import { Badge } from "./ui/badge";
 
 interface CategoryCardProps {
     category: Category;
@@ -6,15 +8,18 @@ interface CategoryCardProps {
 
 function CategoryCard({ category }: CategoryCardProps) {
     return (
-        <div className='relative'>
-            <img className='rounded-lg' src={category.image} alt={category.name} />
+        <div className="relative hover:opacity-90 transition">
+            <SafeImage
+                className="rounded-lg aspect-square object-cover"
+                src={category.image}
+                alt={category.name}
+            />
 
-            <div className='absolute top-0 left-0 px-4 py-2'>
-                <h3 className=''>{category.name}</h3>
-            </div>
-
+            <Badge variant="secondary" className="absolute top-0 left-0 m-2">
+                {category.name}
+            </Badge>
         </div>
-    )
+    );
 }
 
-export default CategoryCard
+export default CategoryCard;

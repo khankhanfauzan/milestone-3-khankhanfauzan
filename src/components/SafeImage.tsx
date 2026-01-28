@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     fallback?: string;
@@ -7,13 +7,12 @@ interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 function SafeImage({
     src,
     alt,
-    fallback = 'https://placehold.co/600x600?text=Image+Not+Available',
+    fallback = "https://placehold.co/600x600?text=Image+Not+Available",
     className,
-    width = 600,
-    height = 600,
+    width,
+    height,
     ...props
 }: SafeImageProps) {
-
     const [sourceImage, setSourceImage] = useState(src);
 
     return (
@@ -27,7 +26,7 @@ function SafeImage({
             width={width}
             height={height}
         />
-    )
+    );
 }
 
-export default SafeImage
+export default SafeImage;
