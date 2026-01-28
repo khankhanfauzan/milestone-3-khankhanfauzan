@@ -10,7 +10,7 @@ function CategoryCard({ category }: CategoryCardProps) {
     return (
         <div className="relative hover:opacity-90 transition">
             <SafeImage
-                className="rounded-lg aspect-square object-cover"
+                className="rounded-lg aspect-video object-cover"
                 src={category.image}
                 alt={category.name}
             />

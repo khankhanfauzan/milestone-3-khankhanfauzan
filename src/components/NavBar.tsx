@@ -68,13 +68,13 @@ function NavBar() {
                     <div className="hidden md:flex items-center space-x-8">
                         <Link
                             href="/"
-                            className={`text-sm transition-colors ${isActive("/")}`}
+                            className={`text-md transition-colors ${isActive("/")}`}
                         >
                             Home
                         </Link>
                         <Link
                             href="/products"
-                            className={`text-sm transition-colors ${isActive("/products")}`}
+                            className={`text-md transition-colors ${isActive("/products")}`}
                         >
                             All Products
                         </Link>
@@ -96,24 +96,6 @@ function NavBar() {
                             )}
                         </Link>
 
-                        {/* <div className="md:hidden">
-                            <DropdownMenu>
-                                <DropdownMenuTrigger>
-                                    <Menu />
-                                </DropdownMenuTrigger>
-                                <DropdownMenuContent>
-                                    <DropdownMenuGroup>
-                                        <DropdownMenuItem>
-                                            Home
-                                        </DropdownMenuItem>
-                                        <DropdownMenuItem>
-                                            All Products
-                                        </DropdownMenuItem>
-                                    </DropdownMenuGroup>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
-                        </div> */}
-
                         <div className="md:hidden">
                             <Button
                                 variant="ghost"
@@ -125,7 +107,7 @@ function NavBar() {
                             </Button>
                         </div>
 
-                        <div className="hidden">
+                        <div className="hidden md:block">
                             {authToken ? (
                                 <DropdownMenu>
                                     <DropdownMenuTrigger>

@@ -6,7 +6,6 @@ import { Badge } from "./ui/badge";
 
 interface ProductCardProps {
     product: Product;
-    onAddToCart: (product: Product) => void;
 }
 
 function ProductCard({ product }: ProductCardProps) {
