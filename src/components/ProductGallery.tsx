@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import SafeImage from "./SafeImage";
 
 function ProductGallery({
     images,
@@ -14,7 +15,8 @@ function ProductGallery({
     return (
         <div className="space-y-4">
             <div className="aspect-square overflow-hidden rounded-3xl shadow-sm">
-                <img
+                <SafeImage
+                    key={images[activeImage]}
                     src={images[activeImage]}
                     alt={title}
                     className="h-full w-full object-cover transition-opacity duration-300"
@@ -31,7 +33,11 @@ function ProductGallery({
                                 : "border-transparent opacity-60"
                         }`}
                     >
-                        <img src={img} className="h-full w-full object-cover" />
+                        <SafeImage
+                            src={img}
+                            alt={`${title} thumbnail ${index + 1}`}
+                            className="h-full w-full object-cover"
+                        />
                     </button>
                 ))}
             </div>
