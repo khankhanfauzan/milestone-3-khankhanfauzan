@@ -62,7 +62,7 @@ function page() {
                         />
                     ))}
                 </div>
-                <div className="col-span-4 rounded-lg flex flex-col p-4 bg-neutral-800 h-full max-h-80">
+                <div className="col-span-4 w-full rounded-lg flex flex-col p-4 bg-neutral-800 min-h-80 min-w-80">
                     <h3 className="text-xl font-semibold">Summary</h3>
                     <div className="flex flex-col gap-2 mt-2">
                         <div className="flex justify-between text-neutral-400">
@@ -74,7 +74,7 @@ function page() {
                             <p>{`$${subTax}`}</p>
                         </div>
                     </div>
-                    <div className="border-t border-neutral-600 flex flex-col gap-4 pt-2 mt-2">
+                    <div className="border-t border-neutral-600 flex flex-col gap-4 pt-2 mt-auto">
                         <div className="flex justify-between">
                             <p className="text-lg font-bold">Total Price</p>
                             <p className="text-lg font-bold">{`$${total}`}</p>

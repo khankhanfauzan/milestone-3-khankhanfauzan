@@ -4,6 +4,23 @@
 
 RevoShop is a simple e‑commerce demo built with Next.js App Router. It showcases product listing, product detail with server‑side rendering, a client‑side cart, and a statically generated FAQ page. The UI uses Radix UI primitives and Tailwind for styling.
 
+## Screenshots
+
+Home
+![Home](./public/screenshots/home.png)
+
+Products
+![Products](./public/screenshots/products.png)
+
+Produc Detail
+![Produc_Detail](./public/screenshots/product-detail.png)
+
+Cart
+![Cart](./public/screenshots/cart.png)
+
+FAQ
+![FAQ](./public/screenshots/faq.png)
+
 ## Features
 
 - Home highlights new arrivals and categories
@@ -30,48 +47,69 @@ RevoShop is a simple e‑commerce demo built with Next.js App Router. It showcas
 ## Folder Structure
 
 ```
-src
-|-- app
-|   |-- cart
-|   |   `-- page.tsx
-|   |-- dashboard
-|   |   `-- page.tsx
-|   |-- faq
-|   |   `-- page.tsx
-|   |-- login
-|   |   `-- page.tsx
-|   |-- products
-|   |   |-- page.tsx
-|   |   `-- [id]
-|   |       `-- page.tsx
-|   |-- layout.tsx
-|   `-- page.tsx
-|-- components
-|   |-- AddToCartAction.tsx
-|   |-- AppSidebar.tsx
-|   |-- BackButton.tsx
-|   |-- CartCard.tsx
-|   |-- CategoryCard.tsx
-|   |-- CategoryCarousel.tsx
-|   |-- FAQCard.tsx
-|   |-- Footer.tsx
-|   |-- HomeCarousel.tsx
-|   |-- Loading.tsx
-|   |-- NavBar.tsx
-|   |-- ProductCard.tsx
-|   |-- ProductGallery.tsx
-|   |-- SafeImage.tsx
-|   `-- ui/...
-|-- hooks
-|   |-- useCart.ts
-|   `-- use-mobile.ts
-|-- services
-|   |-- api.ts
-|   `-- storage.ts
-|-- types
-|   |-- auth.ts
-|   |-- product.ts
-|   `-- faq.ts
-`-- lib
-    `-- utils.ts
+.
+├─ README.md
+├─ .gitignore
+├─ bun.lock
+├─ components.json
+├─ next.config.ts
+├─ package.json
+├─ postcss.config.mjs
+├─ tsconfig.json
+├─ public/
+│  ├─ file.svg
+│  ├─ globe.svg
+│  ├─ next.svg
+│  ├─ vercel.svg
+│  └─ window.svg
+└─ src/
+   ├─ app/
+   │  ├─ categories/
+   │  │  └─ [id]/
+   │  │     └─ page.tsx
+   │  ├─ cart/
+   │  │  └─ page.tsx
+   │  ├─ faq/
+   │  │  └─ page.tsx
+   │  ├─ dashboard/
+   │  │  └─ page.tsx
+   │  ├─ login/
+   │  │  └─ page.tsx
+   │  ├─ products/
+   │  │  ├─ [id]/
+   │  │  │  └─ page.tsx
+   │  │  └─ page.tsx
+   │  ├─ favicon.ico
+   │  ├─ globals.css
+   │  ├─ layout.tsx
+   │  └─ page.tsx
+   ├─ components/
+   │  ├─ AddToCartAction.tsx
+   │  ├─ AppSidebar.tsx
+   │  ├─ BackButton.tsx
+   │  ├─ CartCard.tsx
+   │  ├─ CategoryCard.tsx
+   │  ├─ CategoryCarousel.tsx
+   │  ├─ FAQCard.tsx
+   │  ├─ Footer.tsx
+   │  ├─ HomeCarousel.tsx
+   │  ├─ Loading.tsx
+   │  ├─ NavBar.tsx
+   │  ├─ ProductCard.tsx
+   │  ├─ ProductGallery.tsx
+   │  ├─ SafeImage.tsx
+   │  └─ ui/..
+   ├─ hooks/
+   │  ├─ use-mobile.ts
+   │  └─ useCart.ts
+   ├─ lib/
+   │  └─ utils.ts
+   ├─ services/
+   │  ├─ api.ts
+   │  └─ storage.ts
+   └─ types/
+      ├─ auth.ts
+      ├─ faq.ts
+      ├─ param.ts
+      └─ product.ts
 ```
