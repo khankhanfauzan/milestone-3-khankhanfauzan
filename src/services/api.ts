@@ -52,6 +52,18 @@ export const fetchProductById = async (id: number): Promise<Product> => {
     return res.json();
 };
 
+export const fetchProductsByCategory = async (
+    id: number,
+): Promise<Product[]> => {
+    const res = await fetch(`${STORE_API}/categories/${id}/products`, {
+        cache: "no-store",
+    });
+
+    if (!res.ok) throw new Error("Product by category not found");
+
+    return res.json();
+};
+
 // Categories
 
 export const fetchCategories = async (): Promise<Category[]> => {
