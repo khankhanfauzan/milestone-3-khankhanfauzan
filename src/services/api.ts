@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Category, Product } from "../types/product";
+import { Category, Product, ProductPayload } from "../types/product";
 import { LoginResponse, UserProfile } from "@/types/auth";
 import { storage } from "@/services/storage";
 
@@ -9,6 +9,8 @@ const JSON_API = "https://jsonplaceholder.typicode.com";
 export const api = axios.create({
     baseURL: STORE_API,
 });
+
+
 
 // Products
 
@@ -46,6 +48,45 @@ export const fetchProductByTitle = async (
     const res = await fetch(`${STORE_API}/products/?title=${title}`);
 
     if (!res.ok) throw new Error("Failed to fetch products");
+    return res.json();
+};
+
+export const createProduct = async (payload: ProductPayload): Promise<Product> => {
+    const res = await fetch(`${STORE_API}/products/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) throw new Error("Failed to create product");
+    return res.json();
+}
+
+export const updateProductById = async (
+    id: number,
+    payload: ProductPayload,
+): Promise<Product> => {
+    const res = await fetch(`${STORE_API}/products/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) throw new Error("Failed to update product");
+    return res.json();
+};
+
+export const deleteProductById = async (id: number) => {
+    const res = await fetch(`${STORE_API}/products/${id}`, {
+        method: 'DELETE'
+    });
+
+    if (!res.ok) throw new Error("Failed to delete product");
+
     return res.json();
 };
 

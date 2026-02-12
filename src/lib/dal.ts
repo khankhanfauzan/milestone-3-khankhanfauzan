@@ -46,7 +46,7 @@ export const requireRole = cache(async (allowedRoles: string[]) => {
 	const session = await verifySession();
 
 	if (!allowedRoles.includes(session.role)) {
-		redirect("/dashboard");
+		redirect("/admin");
 	}
 
 	return session;
