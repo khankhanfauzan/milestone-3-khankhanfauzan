@@ -15,20 +15,20 @@ export const api = axios.create({
 // Products
 
 // SSR
-// export const fetchProducts = async (): Promise<Product[]> => {
-//     const res = await fetch(`${STORE_API}/products`, { cache: "no-store" });
-//     if (!res.ok) throw new Error("Failed to fetch products");
-//     return res.json();
-// };
-
-// ISR - revalidate 1 minute
 export const fetchProducts = async (): Promise<Product[]> => {
-
-    console.log("[fetchProducts] called at", new Date().toISOString());
-    const res = await fetch(`${STORE_API}/products`, { next: { revalidate: 60 } });
+    const res = await fetch(`${STORE_API}/products`, { cache: "no-store" });
     if (!res.ok) throw new Error("Failed to fetch products");
     return res.json();
 };
+
+// ISR - revalidate 1 minute
+// export const fetchProducts = async (): Promise<Product[]> => {
+
+//     console.log("[fetchProducts] called at", new Date().toISOString());
+//     const res = await fetch(`${STORE_API}/products`, { next: { revalidate: 60 } });
+//     if (!res.ok) throw new Error("Failed to fetch products");
+//     return res.json();
+// };
 
 export const fetchProductById = async (id: number): Promise<Product> => {
     const res = await fetch(`${STORE_API}/products/${id}`, {
@@ -102,8 +102,9 @@ export const deleteProductById = async (id: number) => {
 
 // Categories
 
+// ISR - revalidate 1 minute
 export const fetchCategories = async (): Promise<Category[]> => {
-    const res = await fetch(`${STORE_API}/categories`, { cache: "no-store" });
+    const res = await fetch(`${STORE_API}/categories`, { next: { revalidate: 60 } });
     if (!res.ok) throw new Error("Failed to fetch categories");
     return res.json();
 };
